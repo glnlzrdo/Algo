@@ -16,8 +16,6 @@ public class Spiral {
 			for (; currCol < availCol; currCol++) {
 				if (val < 9)
 					board[currRow][currCol] = " 0" + ++val + " ";
-				else if (val > 98)
-					board[currRow][currCol] = " " + ++val;
 				else
 					board[currRow][currCol] = " " + ++val + " ";
 			}
@@ -27,8 +25,6 @@ public class Spiral {
 			for (; currRow < availRow; currRow++) {
 				if (val < 9)
 					board[currRow + 1][currCol] = " 0" + ++val + " ";
-				else if (val > 98)
-					board[currRow][currCol] = " " + ++val;
 				else
 					board[currRow + 1][currCol] = " " + ++val + " ";
 			}
@@ -39,10 +35,9 @@ public class Spiral {
 			for (; currCol >= n - availCol; currCol--)
 				if (val < 9)
 					board[currRow][currCol] = " 0" + ++val + " ";
-				else if (val > 98)
-					board[currRow][currCol] = " " + ++val;
 				else
 					board[currRow][currCol] = " " + ++val + " ";
+
 			currCol++;
 			currRow--;
 
@@ -50,8 +45,6 @@ public class Spiral {
 			for (; currRow >= n - availRow; currRow--)
 				if (val < 9)
 					board[currRow][currCol] = " 0" + ++val + " ";
-				else if (val > 98)
-					board[currRow][currCol] = " " + ++val;
 				else
 					board[currRow][currCol] = " " + ++val + " ";
 			currRow++;
@@ -60,26 +53,18 @@ public class Spiral {
 			availRow--;
 		}
 
-		for (int j = 0; j < board.length; j++) {
-			System.out.print("*****");
-		}
-		System.out.println("*");
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				if (j == n - 1)
 					System.out.println("*" + board[i][j] + "*");
 				else
-					System.out.print("*" + board[i][j]);
+					System.out.print("*" + (board[i][j].length() > 4 ? board[i][j].substring(1) : board[i][j]));
 			}
 		}
-		for (int j = 0; j < board.length; j++) {
-			System.out.print("*****");
-		}
-		System.out.print("*");
 	}
 
 	public static void main(String[] args) {
-		printSpiral(10);
+		printSpiral(15);
 	}
 
 }
