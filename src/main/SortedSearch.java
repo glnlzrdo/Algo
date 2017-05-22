@@ -37,6 +37,6 @@ public class SortedSearch {
     }
 
     public static void main(String[] args) {
-        System.out.println(SortedSearch.countNumbers(new int[] { 1, 2, 3, 3, 4, 5, 5 }, 4));
+        System.out.println(SortedSearch.countNumbers(new int[] { 1, 2, 3, 3, 4, 5, 5 }, 6));
     }
 }
